@@ -10,3 +10,6 @@ you have to import some jar file as follows
 import those files to intellij - files=>project stucture=>libraries click on red plus(+) button and add files.
 after successfuly adding those files Rebuild project and Run Main.java file
 
+you face any problem feel free to text me - bhaleraok65@gmail.com
+
+- kirAn
