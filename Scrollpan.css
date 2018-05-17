@@ -1,0 +1,22 @@
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: derive(gray, 100%);
+    -fx-padding: 0px;
+}
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-radius: 2em;
+}
+.text-area {
+    text-area-background: red ;
+}
+
+.text-area .content {
+    -fx-background-color: #CCCCCC ;
+}

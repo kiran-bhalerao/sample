@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OfflineMessages">
+    <children>
+        <AnchorPane prefHeight="548.0" prefWidth="348.0" style="-fx-background-color: #F4F4F4;">
+            <children>
+                <AnchorPane prefHeight="86.0" prefWidth="508.0" style="-fx-background-color: #B40BB4;">
+                    <children>
+                        <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="31.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@res/empty.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="friendsNameLabel" layoutX="126.0" layoutY="23.0" text="KIran Bhalerao" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                  <Text fx:id="ic_txt" fill="WHITE" layoutX="51.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Text>
+                    </children>
+                </AnchorPane>
+                <ScrollPane fx:id="scrollPane" layoutX="26.0" layoutY="100.0" prefHeight="381.0" prefWidth="446.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" stylesheets="@Scrollpan.css">
+                    <content>
+                        <VBox fx:id="vBox" prefWidth="446.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+                    </content>
+                </ScrollPane>
+                <TextField fx:id="textField" editable="false" layoutX="14.0" layoutY="502.0" onKeyPressed="#enterKey" prefHeight="35.0" prefWidth="391.0" style="-fx-background-color: #E3E2E2; -fx-background-radius: 30 0 0 30; -fx-padding: 0 20 0 20;" />
+                <JFXButton fx:id="sendBtn" layoutX="410.0" layoutY="502.0" onAction="#sendClicked" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #E3E2E2; -fx-background-radius: 0 30 30 0;" text="SEND" />
+            </children>
+        </AnchorPane>
+        <ImageView fitWidth="500.0" layoutX="507.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/back_img.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="508.0" layoutY="213.0" />
+        <fx:define>
+            <Image fx:id="closeimg" url="@res/close.png" />
+        </fx:define>
+        <ImageView fitHeight="13.0" fitWidth="13.0" layoutX="966.0" layoutY="18.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/close.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="548.0" layoutY="52.0" text="Offline Messages" textFill="WHITE">
+            <font>
+                <Font size="38.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="160.0" fitWidth="320.0" layoutX="604.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/home_lorem.png" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="82.5" fitWidth="82.5" layoutX="591.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/empty.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="83.0" fitWidth="82.0" layoutX="834.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/empty.png" />
+         </image>
+      </ImageView>
+      <Line endX="120.0" layoutX="751.0" layoutY="342.0" startX="-110.0" stroke="WHITE" style="-fx-rotate: 90;" />
+      <Label fx:id="yourName" layoutX="541.0" layoutY="371.0" prefWidth="180.0" style="-fx-alignment: center; -fx-text-alignment: center;" text="Kiran Bhalerao" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="friendsName" layoutX="787.0" layoutY="371.0" prefWidth="180.0" style="-fx-alignment: center; -fx-text-alignment: center;" text="Kiran Bhalerao" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="yourIp" layoutX="572.0" layoutY="413.0" text="192.168.43.165" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="friendsIp" layoutX="818.0" layoutY="413.0" text="192.168.43.175" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="896.0" layoutY="15.0" onMouseClicked="#backClicked" text="Back" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Text fx:id="ic_txt3" fill="WHITE" layoutX="858.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Text>
+      <Text fx:id="ic_txt2" fill="WHITE" layoutX="615.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 45;" text="K">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

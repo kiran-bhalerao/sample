@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserProfile">
+   <children>
+      <Label layoutX="47.0" layoutY="28.0" text="Profile">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="148.0" layoutY="90.0" startX="-100.0" styleClass="abc" />
+      <Line endX="100.0" layoutX="349.0" layoutY="90.0" startX="-100.0" />
+      <AnchorPane layoutX="193.0" layoutY="113.0" prefHeight="140.0" prefWidth="140.0" style="-fx-background-radius: 100; -fx-background-color: #DBDBDB;">
+         <children>
+            <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/empty.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="ic_txt" fill="WHITE" layoutX="49.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="username" editable="false" layoutX="110.0" layoutY="280.0" onKeyPressed="#enterKeyusername" prefHeight="40.0" prefWidth="300.0" promptText="Username" style="-fx-background-color: #E8E8E8; -fx-background-radius: 30; -fx-padding: 0 20 0 20;" styleClass="pomptColor" stylesheets="@css/styles.css" />
+      <TextField fx:id="password" layoutX="110.0" layoutY="343.0" onKeyPressed="#enterKeyPassword" prefHeight="40.0" prefWidth="300.0" promptText="Password" style="-fx-background-color: #E8E8E8; -fx-background-radius: 30; -fx-padding: 0 20 0 20;" styleClass="pomptColor" stylesheets="@css/styles.css" />
+      <TextField fx:id="cpassword" layoutX="109.0" layoutY="402.0" onKeyPressed="#enterKeyCPassword" prefHeight="40.0" prefWidth="300.0" promptText="Confirm Password" style="-fx-background-color: #E8E8E8; -fx-background-radius: 30; -fx-padding: 0 20 0 20;" styleClass="pomptColor" stylesheets="@css/styles.css" />
+      <TextField fx:id="nickName" layoutX="110.0" layoutY="461.0" onKeyPressed="#enterKeyNickName" prefHeight="40.0" prefWidth="300.0" promptText="What's your nick name ?" style="-fx-background-color: #E8E8E8; -fx-background-radius: 30; -fx-padding: 0 20 0 20;" styleClass="pomptColor" stylesheets="@css/styles.css" />
+      <JFXButton layoutX="195.0" layoutY="528.0" onAction="#saveClicked" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #9900FF; -fx-background-radius: 30;" text="SAVE" textFill="WHITE" />
+      <ImageView fitHeight="13.0" fitWidth="13.0" layoutX="482.0" layoutY="19.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/closeBlack.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

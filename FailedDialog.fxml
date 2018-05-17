@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="anchorPan" prefHeight="255.0" prefWidth="410.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="FailedDialog">
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="108.0" prefWidth="410.0" style="-fx-background-color: #9900FF;">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="175.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/emoji.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="386.0" layoutY="12.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@res/close.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="110.0" layoutY="126.0" text="Login Failed !">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="96.0" layoutY="170.0" text="Your Password was incorrect ...">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="148.0" layoutY="209.0" onMouseClicked="#close" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #9900FF; -fx-background-radius: 30;" text="Try Again" textFill="WHITE" />
+   </children>
+</AnchorPane>

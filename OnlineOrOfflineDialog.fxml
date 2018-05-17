@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPan" prefHeight="255.0" prefWidth="410.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="OnlineOrOfflineDialog">
+    <children>
+        <AnchorPane layoutY="-2.0" prefHeight="108.0" prefWidth="410.0" style="-fx-background-color: #9900FF;">
+            <children>
+                <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="175.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@res/emoji.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="12.0" fitWidth="12.0" layoutX="386.0" layoutY="12.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@res/close.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <Label layoutX="81.0" layoutY="125.0" text="Offline or Online !">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+        <Label layoutX="69.0" layoutY="169.0" text="Select your mode as Online or Offline...">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <JFXButton layoutX="224.0" layoutY="208.0" onMouseClicked="#close" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #9900FF;" text="Offline" textFill="#9900ff" />
+      <JFXButton layoutX="87.0" layoutY="208.0" onAction="#onlineClicked" onMouseClicked="#close" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #9900FF; -fx-background-radius: 30;" text="Online" textFill="WHITE" />
+      <JFXButton layoutX="225.0" layoutY="209.0" onAction="#offlineClicked" onMouseClicked="#close" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-radius: 30;" text="Offline" textFill="#9900ff" />
+    </children>
+</AnchorPane>

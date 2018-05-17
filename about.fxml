@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="470.0" prefWidth="420.0" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="About">
+    <children>
+        <AnchorPane prefHeight="140.0" prefWidth="420.0" style="-fx-background-color: #9900FF;">
+            <children>
+                <ImageView fitHeight="13.0" fitWidth="13.0" layoutX="385.0" layoutY="18.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@res/close.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="134.0" layoutY="64.0" prefHeight="152.0" prefWidth="150.0" style="-fx-background-radius: 100; -fx-background-color: white;" />
+        <ImageView fitHeight="142.0" fitWidth="140.0" layoutX="140.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/cutmypic.png" />
+            </image>
+        </ImageView>
+        <JFXButton fx:id="saveBtn" layoutX="128.0" layoutY="413.0" onMouseClicked="#close" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #9900FF; -fx-background-radius: 30;" text="Close" textFill="WHITE" />
+        <Text fill="#3c3c3c" layoutX="68.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiran Bhalerao">
+            <font>
+                <Font name="System Bold" size="34.0" />
+            </font>
+        </Text>
+        <Text fill="#464646" layoutX="117.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hey, This is my Portfolio.">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <Text fill="#464646" layoutX="72.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I'm a Software Developer as well as ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+        <Text fill="#464646" layoutX="161.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UI Designer !">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home">
+    <children>
+        <AnchorPane prefHeight="548.0" prefWidth="500.0" style="-fx-background-color: #F9F6F6;">
+            <children>
+                <Label layoutX="46.0" layoutY="31.0" prefHeight="36.0" text="LET'S GO">
+                    <font>
+                        <Font name="System Bold" size="38.0" />
+                    </font>
+                </Label>
+            <Line endX="100.0" layoutX="147.0" layoutY="95.0" startX="-100.0" />
+            <Line endX="100.0" layoutX="348.0" layoutY="95.0" startX="-100.0" />
+            <AnchorPane fx:id="JoinPan" layoutX="268.0" layoutY="219.0" prefHeight="129.0" prefWidth="130.0">
+               <children>
+                  <JFXButton fx:id="JoinBtn" layoutX="10.0" layoutY="10.0" onAction="#joinClicked" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: #9900FF; -fx-background-radius: 100;" text="JOIN" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="GroupPan" layoutX="92.0" layoutY="218.0" prefHeight="129.0" prefWidth="128.0">
+               <children>
+                  <JFXButton layoutX="11.0" layoutY="11.0" onAction="#groupClicked" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: #9900FF; -fx-background-radius: 100;" text="GROUP" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Label layoutX="142.0" layoutY="442.0" text="Create group or join group">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="411.0" layoutY="510.0" mnemonicParsing="false" onMouseClicked="#aboutClicked" style="-fx-background-color: #F9F6F6;" text="About !" />
+            <Button layoutX="40.0" layoutY="510.0" mnemonicParsing="false" onAction="#backClicked" style="-fx-background-color: #F9F6F6;" text="Back !" />
+            </children>
+        </AnchorPane>
+        <ImageView fitWidth="500.0" layoutX="501.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/back_img.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="508.0" layoutY="213.0" />
+        <fx:define>
+            <Image fx:id="closeimg" url="@res/close.png" />
+        </fx:define>
+        <ImageView fitHeight="13.0" fitWidth="13.0" layoutX="966.0" layoutY="18.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/close.png" />
+            </image>
+        </ImageView>
+      <Label layoutX="551.0" layoutY="44.0" text="History" textFill="WHITE">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Label>
+        <ImageView fitHeight="160.0" fitWidth="320.0" layoutX="605.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/home_lorem.png" />
+            </image>
+        </ImageView>
+      <Label fx:id="ipLabel" layoutX="778.0" layoutY="16.0" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="915.0" layoutY="15.0" onMouseClicked="#profileClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/profile.png" />
+         </image>
+      </ImageView>
+        <AnchorPane fx:id="anchorPane" layoutX="502.0" layoutY="197.0" prefHeight="330.0" prefWidth="500.0" style="-fx-background-color: transparent; -fx-padding: 0 0 20 0;">
+            <children>
+                <ScrollPane fx:id="scrollPane" prefHeight="330.0" prefWidth="500.0" stylesheets="@css/TransparentSrollpan.css">
+                    <content>
+                        <VBox fx:id="vBox" prefHeight="328.0" prefWidth="497.0" style="-fx-background-color: transparent;" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

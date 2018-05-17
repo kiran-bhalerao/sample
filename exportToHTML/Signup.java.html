@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>Signup.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(106,135,89); }
+.s3 { color: rgb(104,151,187); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Signup.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">import </span><span class="s1">com.jfoenix.controls.JFXButton</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.event.ActionEvent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.fxml.FXML</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.fxml.FXMLLoader</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.fxml.Initializable</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.Node</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.Parent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.Scene</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.control.PasswordField</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.control.TextField</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.input.KeyCode</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.input.KeyEvent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.scene.input.MouseEvent</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">javafx.stage.Stage</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">java.io.IOException</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.net.URL</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.sql.PreparedStatement</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.sql.ResultSet</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.sql.SQLException</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">java.util.ResourceBundle</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">public class </span><span class="s1">Signup </span><span class="s0">implements </span><span class="s1">Initializable { 
+ 
+ 
+    String name</span><span class="s0">;</span><span class="s1"> 
+ 
+    @FXML 
+    </span><span class="s0">private </span><span class="s1">TextField username</span><span class="s0">;</span><span class="s1"> 
+ 
+    @FXML 
+    </span><span class="s0">private </span><span class="s1">PasswordField ConfirmPassword</span><span class="s0">;</span><span class="s1"> 
+ 
+    @FXML 
+    </span><span class="s0">private </span><span class="s1">JFXButton login_btn</span><span class="s0">;</span><span class="s1"> 
+ 
+    @FXML 
+    </span><span class="s0">private </span><span class="s1">PasswordField password</span><span class="s0">;</span><span class="s1"> 
+ 
+    @FXML 
+    </span><span class="s0">private </span><span class="s1">TextField question</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+    @FXML 
+    </span><span class="s0">void </span><span class="s1">close(MouseEvent e) { 
+        Node source = (Node) e.getSource()</span><span class="s0">;</span><span class="s1"> 
+        Stage stage = (Stage) source.getScene().getWindow()</span><span class="s0">;</span><span class="s1"> 
+        stage.close()</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+ 
+    @FXML 
+    </span><span class="s0">void </span><span class="s1">enterKeyUsername(KeyEvent event) { 
+        </span><span class="s0">if </span><span class="s1">(event.getCode() == KeyCode.getKeyCode(</span><span class="s2">&quot;Enter&quot;</span><span class="s1">)) 
+            password.requestFocus()</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @FXML 
+    </span><span class="s0">void </span><span class="s1">enterKeyConfirm(KeyEvent event) { 
+        </span><span class="s0">if </span><span class="s1">(event.getCode() == KeyCode.getKeyCode(</span><span class="s2">&quot;Enter&quot;</span><span class="s1">)) 
+            question.requestFocus()</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+ 
+    @FXML 
+    </span><span class="s0">void </span><span class="s1">enterKeyPassword(KeyEvent event) { 
+        </span><span class="s0">if </span><span class="s1">(event.getCode() == KeyCode.getKeyCode(</span><span class="s2">&quot;Enter&quot;</span><span class="s1">)) 
+            ConfirmPassword.requestFocus()</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @FXML 
+    </span><span class="s0">void </span><span class="s1">signClicked(MouseEvent e) { 
+ 
+        </span><span class="s0">boolean </span><span class="s1">hasAlreadUsername = </span><span class="s0">false;</span><span class="s1"> 
+        </span><span class="s0">try </span><span class="s1">{ 
+            PreparedStatement preparedStatement2 = Context.getInstance().getConnection().prepareStatement(</span><span class="s2">&quot;SELECT username FROM login&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+            ResultSet resultSet2 = preparedStatement2.executeQuery()</span><span class="s0">;</span><span class="s1"> 
+            </span><span class="s0">while </span><span class="s1">(resultSet2.next()) { 
+                hasAlreadUsername = (resultSet2.getString(</span><span class="s2">&quot;username&quot;</span><span class="s1">).equals(username.getText()))</span><span class="s0">;</span><span class="s1"> 
+                </span><span class="s0">if </span><span class="s1">(hasAlreadUsername) 
+                    </span><span class="s0">break;</span><span class="s1"> 
+ 
+            } 
+        } </span><span class="s0">catch </span><span class="s1">(SQLException e1) { 
+            System.out.println(e1.getMessage())</span><span class="s0">;</span><span class="s1"> 
+        } 
+ 
+        </span><span class="s0">if </span><span class="s1">(!hasAlreadUsername &amp;&amp; !username.getText().equals(</span><span class="s2">&quot;&quot;</span><span class="s1">) &amp;&amp; !ConfirmPassword.getText().equals(</span><span class="s2">&quot;&quot;</span><span class="s1">) &amp;&amp; password.getText().equals(ConfirmPassword.getText())) { 
+            </span><span class="s0">try </span><span class="s1">{ 
+                PreparedStatement preparedStatement = Context.getInstance().getConnection().prepareStatement(</span><span class="s2">&quot;INSERT INTO login VALUES(?,?,?)&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                preparedStatement.setString(</span><span class="s3">1</span><span class="s0">, </span><span class="s1">username.getText())</span><span class="s0">;</span><span class="s1"> 
+                preparedStatement.setString(</span><span class="s3">2</span><span class="s0">, </span><span class="s1">password.getText())</span><span class="s0">;</span><span class="s1"> 
+                preparedStatement.setString(</span><span class="s3">3</span><span class="s0">, </span><span class="s1">question.getText())</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+                preparedStatement.executeUpdate()</span><span class="s0">;</span><span class="s1"> 
+                preparedStatement.close()</span><span class="s0">;</span><span class="s1"> 
+ 
+                Node source = (Node) e.getSource()</span><span class="s0">;</span><span class="s1"> 
+                Stage stage = (Stage) source.getScene().getWindow()</span><span class="s0">;</span><span class="s1"> 
+                Parent root = FXMLLoader.load(getClass().getResource(</span><span class="s2">&quot;login.fxml&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+                stage.setTitle(</span><span class="s2">&quot;Login&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+                stage.setScene(</span><span class="s0">new </span><span class="s1">Scene(root</span><span class="s0">, </span><span class="s3">1000</span><span class="s0">, </span><span class="s3">548</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+            } </span><span class="s0">catch </span><span class="s1">(Exception exception) { 
+                System.out.println(exception.getMessage())</span><span class="s0">;</span><span class="s1"> 
+            } 
+        } 
+ 
+ 
+    } 
+ 
+    @FXML 
+    </span><span class="s0">void </span><span class="s1">loginBack(ActionEvent event) </span><span class="s0">throws </span><span class="s1">IOException { 
+        Node source = (Node) event.getSource()</span><span class="s0">;</span><span class="s1"> 
+        Stage stage = (Stage) source.getScene().getWindow()</span><span class="s0">;</span><span class="s1"> 
+        Parent root = FXMLLoader.load(getClass().getResource(</span><span class="s2">&quot;login.fxml&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+        stage.setTitle(</span><span class="s2">&quot;Login&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+        stage.setScene(</span><span class="s0">new </span><span class="s1">Scene(root</span><span class="s0">, </span><span class="s3">1000</span><span class="s0">, </span><span class="s3">548</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">initialize(URL location</span><span class="s0">, </span><span class="s1">ResourceBundle resources) { 
+        Context.getInstance().setSignup(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+    } 
+} 
+</span></pre>
+</body>
+</html>
